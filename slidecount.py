@@ -5,7 +5,8 @@ import os
 import re
 import zipfile
 import tkinter
-from tkinter import filedialog, messagebox
+from tkinter import * #filedialog, messagebox
+
 
 def show_error(text):
     tkinter.messagebox.showerror('Error', text)
@@ -88,6 +89,14 @@ summary.pack(ipady=10)
 # Draw the button that opens the file picker.
 open_files = tkinter.Button(app, text="Choose decks...", command=clicked)
 open_files.pack(fill="x")
+
+app_table = tkinter.Tk()
+height = 5
+width = 2
+for i in range(height): #Rows
+    for j in range(width): #Columns
+        b = Entry(app_table, text="")
+        b.grid(row=i, column=j)
 
 # Initialize Tk window.
 app.mainloop()
